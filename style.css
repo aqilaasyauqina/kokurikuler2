@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #c8e6c9, #f1f8e9, #ffffff);
+    background-attachment: fixed;
+    color: #333;
+    min-height: 100vh;
+    cursor: crosshair;
+    transition: background 0.3s ease;
+}
+
+
+/* Cursor tracking gradient */
+.cursor-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+        rgba(76, 175, 80, 0.3) 0%, 
+        rgba(129, 199, 132, 0.2) 30%, 
+        transparent 70%);
+    transition: all 0.3s ease;
+}
+
+nav {
+    background: linear-gradient(90deg, #4CAF50, #66BB6A);
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration: none;
+}
+
+header {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.9), rgba(102, 187, 106, 0.9));
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    display: none;
+    animation: fadeIn 0.5s ease-in;
+}
+
+section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+section img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #4CAF50;
+    border-bottom: 3px solid #4CAF50;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(90deg, #333, #555);
+    color: white;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+.quiz {
+    margin-top: 30px;
+}
+
+.question {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50;
+}
+
+.options {
+    list-style: none;
+    padding: 0;
+}
+
+.options li {
+    margin: 8px 0;
+    padding: 10px;
+    background-color: #e8f5e8;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.options li:hover {
+    background-color: #c8e6c9;
+    border-color: #4CAF50;
+    transform: translateX(5px);
+}
+
+.options li.selected {
+    background-color: #81c784;
+    color: white;
+    font-weight: bold;
+}
+
+.options li.correct {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #2E7D32;
+}
+
+.options li.incorrect {
+    background-color: #f44336;
+    color: white;
+    border-color: #c62828;
+}
+
+.answer {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e8f5e8;
+    border-left: 5px solid #4CAF50;
+    border-radius: 5px;
+}
+
+.show-answer {
+    cursor: pointer;
+    color: #4CAF50;
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.score {
+    background: linear-gradient(135deg, #4CAF50, #66BB6A);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
